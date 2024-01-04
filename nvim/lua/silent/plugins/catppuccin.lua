@@ -9,8 +9,8 @@ return {
 			-- neotree = true
 			-- neotest = true
 			which_key = true,
-			treesitter_context = true
-		}
+			treesitter_context = true,
+		},
 	},
 	init = function()
 		vim.cmd.colorscheme("catppuccin")
