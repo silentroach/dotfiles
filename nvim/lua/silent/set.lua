@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes" -- gutter space is always reserved
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
