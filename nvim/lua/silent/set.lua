@@ -2,6 +2,10 @@ vim.keymap.set("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- gutter space is always reserved
