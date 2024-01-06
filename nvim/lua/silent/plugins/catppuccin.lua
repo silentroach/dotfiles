@@ -10,6 +10,7 @@ return {
 			neotest = true,
 			which_key = true,
 			treesitter_context = true,
+			lsp_trouble = true,
 		},
 	},
 	init = function()
