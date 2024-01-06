@@ -7,7 +7,7 @@ return {
 		integrations = {
 			mason = true,
 			-- neotree = true
-			-- neotest = true
+			neotest = true,
 			which_key = true,
 			treesitter_context = true,
 		},
