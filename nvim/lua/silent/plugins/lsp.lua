@@ -1,47 +1,57 @@
 return {
 	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
-			{ "folke/neodev.nvim", opts = {} },
-			"mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-		},
-		config = function()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.tsserver.setup({})
-		end,
+		"williamboman/mason.nvim",
+		config = true,
 	},
 	{
-		"williamboman/mason.nvim",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		opts = {
+			ensure_installed = { "lua_ls", "tsserver" },
+			automatic_installation = true,
 		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"prettier",
+				"stylua",
+			},
+		},
+	},
+
+	{
+		"neovim/nvim-lspconfig",
 		config = function()
-			require("mason").setup({})
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					"prettier",
-					"stylua",
-				},
+			local lspconfig = require("lspconfig")
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
 			})
 
-			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "html", "cssls" },
-				automatic_installation = true,
-			})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},
 	{
 		"nvimtools/none-ls.nvim",
-		opts = function(_, opts)
-			local nls = require("null-ls")
-			opts.sources = opts.sources or {}
-			table.insert(opts.sources, nls.builtins.formatting.prettier)
-			table.insert(opts.sources, nls.builtins.formatting.stylua)
+		config = function()
+			local null_ls = require("null-ls")
+
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.prettier,
+				},
+			})
+			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 		end,
 	},
 }

@@ -17,8 +17,6 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "File live grep" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "Find recently opened files" })
-		vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, { desc = "Goto Definition" })
-		vim.keymap.set("n", "<leader>gr", builtin.lsp_references, { desc = "Goto Reference" })
 
 		local telescope = require("telescope")
 
