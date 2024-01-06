@@ -14,6 +14,9 @@ return {
 		require("bufferline").setup({
 			options = {
 				always_show_bufferline = false,
+				show_buffer_close_icons = false,
+				show_close_icons = false,
+				separator_style = "slope",
 			},
 			highlights = require("catppuccin.groups.integrations.bufferline").get(),
 		})
