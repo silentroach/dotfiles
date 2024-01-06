@@ -5,7 +5,7 @@ return {
 	opts = {
 		flavour = "frappe",
 		integrations = {
-			-- mason = true
+			mason = true,
 			-- neotree = true
 			-- neotest = true
 			which_key = true,
