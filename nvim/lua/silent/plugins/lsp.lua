@@ -1,28 +1,26 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		config = true,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = false,
-		opts = {
-			ensure_installed = { "lua_ls", "tsserver" },
-			automatic_installation = true,
-		},
-	},
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		opts = {
-			ensure_installed = {
-				"prettier",
-				"stylua",
-			},
-		},
-	},
-
-	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			{ "williamboman/mason.nvim", config = true },
+			{
+				"williamboman/mason-lspconfig.nvim",
+				opts = {
+					ensure_installed = { "lua_ls", "tsserver" },
+					automatic_installation = true,
+				},
+			},
+			{
+				"WhoIsSethDaniel/mason-tool-installer.nvim",
+				opts = {
+					ensure_installed = {
+						"prettier",
+						"stylua",
+					},
+				},
+			},
+			{ "j-hui/fidget.nvim", opts = {} },
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
