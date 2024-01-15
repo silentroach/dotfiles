@@ -15,5 +15,5 @@ brew install fish fzf starship
 # useful tools
 brew install httpie colordiff htop
 
-# terminal font
-brew install font-fira-code-nerd-font --cask
+# terminal font (moved to MonoLisa)
+# brew install font-fira-code-nerd-font --cask
