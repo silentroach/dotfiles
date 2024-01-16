@@ -6,6 +6,7 @@ return {
 		flavour = "frappe",
 		integrations = {
 			mason = true,
+			fidget = true,
 			-- neotree = true
 			neotest = true,
 			which_key = true,
