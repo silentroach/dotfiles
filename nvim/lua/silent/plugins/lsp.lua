@@ -25,6 +25,9 @@ return {
 				keys = {
 					{ "<leader>cr", ":IncRename ", desc = "Incremental rename" },
 				},
+				config = function()
+					require("inc_rename").setup()
+				end,
 			},
 			{ "j-hui/fidget.nvim", config = true },
 		},
