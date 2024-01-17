@@ -1,6 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		event = "BufReadPre",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true },
 			{
@@ -19,7 +20,13 @@ return {
 					},
 				},
 			},
-			{ "j-hui/fidget.nvim", opts = {} },
+			{
+				"smjonas/inc-rename.nvim",
+				keys = {
+					{ "<leader>cr", ":IncRename ", desc = "Incremental rename" },
+				},
+			},
+			{ "j-hui/fidget.nvim", config = true },
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -36,7 +43,6 @@ return {
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 		end,
 	},
 	{
