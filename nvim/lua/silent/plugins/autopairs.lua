@@ -3,6 +3,8 @@ return {
 	event = { "InsertEnter" },
 	dependencies = {
 		"hrsh7th/nvim-cmp",
+		"nvim-treesitter/nvim-treesitter",
+		"abecodes/tabout.nvim",
 	},
 	opts = {
 		check_ts = true,
@@ -20,5 +22,7 @@ return {
 
 		-- make autopairs and completion work together
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+		require("tabout").setup()
 	end,
 }
