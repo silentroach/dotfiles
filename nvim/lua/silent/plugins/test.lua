@@ -4,6 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"andythigpen/nvim-coverage",
 		"nvim-neotest/neotest-jest",
+		"nvim-neotest/neotest-go",
 		"nvim-neotest/neotest-plenary",
 	},
 	config = function()
@@ -12,6 +13,7 @@ return {
 		neotest.setup({
 			adapters = {
 				require("neotest-plenary").setup({}),
+				require("neotest-go"),
 				require("neotest-jest")({
 					jestCommand = "npm test --",
 					env = { CI = true },
