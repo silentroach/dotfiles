@@ -17,6 +17,7 @@ return {
 					ensure_installed = {
 						"prettier",
 						"stylua",
+						"gopls",
 					},
 				},
 			},
@@ -39,6 +40,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
 
