@@ -17,6 +17,8 @@ return {
 					"markdown",
 					"markdown_inline",
 					"regex",
+					"json",
+					"json5",
 				},
 			})
 		end,
