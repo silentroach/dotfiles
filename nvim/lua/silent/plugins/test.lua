@@ -29,10 +29,10 @@ return {
 		vim.keymap.set("n", "<localleader>tr", function()
 			neotest.run.run()
 			neotest.summary.open()
-		end)
+		end, { desc = "Run tests" })
 
 		vim.keymap.set("n", "<localleader>tt", function()
 			neotest.summary.toggle()
-		end)
+		end, { desc = "Toggle tests panel" })
 	end,
 }
