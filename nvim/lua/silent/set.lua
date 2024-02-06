@@ -33,3 +33,6 @@ vim.opt.smartcase = true
 vim.opt.scrolloff = 6
 
 vim.opt.cursorline = true
+
+vim.opt.spell = true
+vim.opt.spelllang = "en_us,ru"
