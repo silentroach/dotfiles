@@ -18,6 +18,7 @@ return {
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>ft", builtin.treesitter, { desc = "Treesitter" })
 		vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "Marks" })
+		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "References" })
 		vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "Find recently opened files" })
 
 		local telescope = require("telescope")
