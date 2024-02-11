@@ -15,7 +15,7 @@ defaults write com.apple.menuextra.clock "IsAnalog" -bool TRUE
 defaults write com.apple.menuextra.clock "ShowDayOfWeek" -bool FALSE
 
 # Dock
-defaults write com.apple.dock "tilesize" -int "36"
+defaults write com.apple.dock "tilesize" -int "42"
 
 # Do not show recent apps in dock
 defaults write com.apple.dock show-recents -bool FALSE
