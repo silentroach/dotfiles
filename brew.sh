@@ -17,3 +17,6 @@ brew install httpie colordiff htop stow
 
 # terminal font (moved to MonoLisa)
 # brew install font-fira-code-nerd-font --cask
+
+# apps
+brew install 1password alfred iterm2 obsidian
