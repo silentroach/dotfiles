@@ -24,8 +24,8 @@ keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
 keymap("v", "p", '"_dP')
 
 -- resize window using <shift> arrow keys
-keymap("n", "<S-Up>", "<cmd>resize +2<CR>")
-keymap("n", "<S-Down>", "<cmd>resize -2<CR>")
+keymap("n", "<S-Down>", "<cmd>resize +2<CR>")
+keymap("n", "<S-Up>", "<cmd>resize -2<CR>")
 keymap("n", "<S-Left>", "<cmd>vertical resize -2<CR>")
 keymap("n", "<S-Right>", "<cmd>vertical resize +2<CR>")
 
