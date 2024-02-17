@@ -1,6 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
+	lazy = false, -- to use it instead of netrw
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
@@ -25,6 +26,7 @@ return {
 		filesystem = {
 			follow_current_file = { enabled = true },
 			use_libuv_file_watcher = true,
+			hijack_netrw_behavior = "open_default",
 		},
 	},
 	deactivate = function()
