@@ -1,0 +1,19 @@
+[user]
+    name = Igor Kalashnikov
+[core]
+    excludesfile = ~/.gitignore
+    white-space = trailing-space
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[branch]
+    sort = committerdate
+[fetch]
+    prune = true
+    pruneTags = true
+[diff]
+    algorithm = patience
+
+[include]
+    path = ~/.gitconfig.private
