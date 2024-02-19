@@ -18,6 +18,7 @@ return {
 						"prettier",
 						"stylua",
 						"gopls",
+						"shfmt",
 					},
 				},
 			},
@@ -63,6 +64,9 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettier,
+					null_ls.builtins.formatting.shfmt,
+					null_ls.builtins.formatting.fish_indent,
+					null_ls.builtins.diagnostics.fish,
 				},
 			})
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})

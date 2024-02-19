@@ -18,6 +18,8 @@ return {
 					markdown = { "prettier" },
 					lua = { "stylua" },
 					json5 = { "prettier" },
+					fish = { "fish_indent" },
+					sh = { "shfmt" },
 				},
 				format_on_save = {
 					lsp_fallback = true,
