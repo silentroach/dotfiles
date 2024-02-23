@@ -2,6 +2,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.default_cwd = "/Volumes/Projects"
+config.scrollback_lines = 10000
+
 config.color_scheme = "Catppuccin Frappe"
 
 config.font = wezterm.font({
@@ -10,6 +13,7 @@ config.font = wezterm.font({
 })
 config.font_size = 13
 config.line_height = 1.05
+config.cell_width = 0.9
 
 config.audible_bell = "Disabled"
 
