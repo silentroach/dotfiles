@@ -19,4 +19,4 @@ brew install httpie colordiff htop stow
 # brew install font-fira-code-nerd-font --cask
 
 # apps
-brew install 1password alfred iterm2 obsidian
+brew install 1password alfred wezterm obsidian
