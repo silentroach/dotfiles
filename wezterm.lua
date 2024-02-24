@@ -6,6 +6,7 @@ config.default_cwd = "/Volumes/Projects"
 config.scrollback_lines = 10000
 
 config.color_scheme = "Catppuccin Frappe"
+config.max_fps = 120
 
 config.font = wezterm.font({
 	family = "MonoLisa Nerd Font",
