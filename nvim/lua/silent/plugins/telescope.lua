@@ -10,20 +10,29 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
+		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	config = function()
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "File live grep" })
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>ft", builtin.treesitter, { desc = "Treesitter" })
 		vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "Marks" })
-		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "References" })
 		vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "Find recently opened files" })
+		vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
+
+		vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinition" })
+		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
 
 		local telescope = require("telescope")
 
 		telescope.setup({
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown(),
+				},
+			},
 			defaults = {
 				file_ignore_patterns = {
 					"node_modules",
@@ -32,5 +41,6 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("ui-select")
 	end,
 }
