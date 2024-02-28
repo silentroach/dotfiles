@@ -1,6 +1,8 @@
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v3.x",
+	version = "*",
 	lazy = false, -- to use it instead of netrw
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -13,12 +15,14 @@ return {
 			function()
 				require("neo-tree.command").execute({ toggle = true })
 			end,
+			desc = "Toggle file explorer",
 		},
 		{
 			"<leader>ge",
 			function()
 				require("neo-tree.command").execute({ source = "git_status" })
 			end,
+			desc = "Toggle git status",
 		},
 	},
 	opts = {
