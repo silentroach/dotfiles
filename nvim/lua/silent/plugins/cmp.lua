@@ -34,6 +34,7 @@ return {
 
 			return {
 				completion = {
+					keyword_length = 1, -- do not show autocomplete for nothing
 					completeopt = "menu,menuone,noinsert",
 				},
 				snippet = {
