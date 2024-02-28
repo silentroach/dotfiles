@@ -12,6 +12,8 @@
 [fetch]
     prune = true
     pruneTags = true
+[push]
+    autoSetupRemote = true
 [diff]
     algorithm = patience
 
