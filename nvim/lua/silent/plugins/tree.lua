@@ -31,6 +31,14 @@ return {
 			follow_current_file = { enabled = true },
 			use_libuv_file_watcher = true,
 			hijack_netrw_behavior = "open_default",
+			group_empty_dirs = true,
+			filtered_items = {
+				visible = true,
+				never_show = {
+					".git",
+					".DS_Store",
+				},
+			},
 		},
 	},
 	deactivate = function()
