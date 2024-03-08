@@ -16,6 +16,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes" -- gutter space is always reserved
+--vim.opt.smoothscroll = true
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
