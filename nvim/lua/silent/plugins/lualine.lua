@@ -5,6 +5,6 @@ return {
 	opts = {
 		icons_enabled = true,
 		theme = "catppuccin",
-		extensions = { "neo-tree" },
+		extensions = { "neo-tree", "fzf", "lazy", "trouble" },
 	},
 }

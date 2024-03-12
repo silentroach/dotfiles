@@ -7,6 +7,7 @@ keymap("n", "<C-h>", "<C-W>h")
 keymap("n", "<C-l>", "<C-W>l")
 
 keymap("n", "<leader>bd", ":bdelete<cr>", { desc = "Close current buffer" })
+keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- keep selection after indent
 keymap("v", "<", "<gv")

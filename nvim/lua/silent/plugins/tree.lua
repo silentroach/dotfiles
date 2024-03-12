@@ -2,7 +2,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	version = "*",
+	version = "v3.x",
 	lazy = false, -- to use it instead of netrw
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -11,7 +11,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>fe",
+			"\\",
 			function()
 				require("neo-tree.command").execute({ toggle = true })
 			end,
@@ -27,16 +27,23 @@ return {
 	},
 	opts = {
 		close_if_last_window = true,
+		window = {
+			position = "float",
+		},
 		filesystem = {
 			follow_current_file = { enabled = true },
 			use_libuv_file_watcher = true,
 			hijack_netrw_behavior = "open_default",
 			group_empty_dirs = true,
 			filtered_items = {
-				visible = true,
+				-- "H" to toggle invisibles
+				-- visible = true,
 				never_show = {
 					".git",
 					".DS_Store",
+					".Trashes",
+					".fseventsd",
+					".Spotlight-V100",
 				},
 			},
 		},
