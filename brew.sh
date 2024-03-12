@@ -22,4 +22,4 @@ brew install colima
 # brew install font-fira-code-nerd-font --cask
 
 # apps
-brew install 1password alfred wezterm obsidian
+brew install 1password alfred alacritty obsidian
