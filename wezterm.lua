@@ -18,6 +18,7 @@ config.cell_width = 0.9
 
 config.audible_bell = "Disabled"
 
+config.use_resize_increments = true
 config.window_padding = {
 	left = 2,
 	right = 2,
@@ -25,13 +26,13 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.hide_tab_bar_if_only_one_tab = true
-
 config.window_frame = {
 	font = wezterm.font({
 		family = "Lucida Grande",
 	}),
 	font_size = 12,
 }
+
+config.hide_tab_bar_if_only_one_tab = true
 
 return config
