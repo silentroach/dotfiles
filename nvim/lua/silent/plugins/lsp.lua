@@ -48,6 +48,8 @@ return {
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			-- using telescope for references
+			-- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},
