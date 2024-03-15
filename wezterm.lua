@@ -12,7 +12,7 @@ config.font = wezterm.font({
 	family = "MonoLisa Nerd Font",
 	weight = "Light",
 })
-config.font_size = 14
+config.font_size = 13
 config.line_height = 1.1
 config.cell_width = 0.9
 
