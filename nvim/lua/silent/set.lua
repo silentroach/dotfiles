@@ -27,7 +27,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
-vim.opt.colorcolumn = "80"
+-- using NeoColumn
+-- vim.opt.colorcolumn = "80"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
