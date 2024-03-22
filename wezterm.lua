@@ -33,6 +33,9 @@ config.window_frame = {
 	font_size = 12,
 }
 
+config.initial_rows = 50
+config.initial_cols = 160
+
 config.hide_tab_bar_if_only_one_tab = true
 
 return config
