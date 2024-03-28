@@ -1,10 +1,10 @@
 local keymap = vim.keymap.set
 
--- moving between windows
-keymap("n", "<C-j>", "<C-W>j")
-keymap("n", "<C-k>", "<C-W>k")
-keymap("n", "<C-h>", "<C-W>h")
-keymap("n", "<C-l>", "<C-W>l")
+-- moving between windows (now using nvim-tmux-navigator)
+-- keymap("n", "<C-j>", "<C-W>j")
+-- keymap("n", "<C-k>", "<C-W>k")
+-- keymap("n", "<C-h>", "<C-W>h")
+-- keymap("n", "<C-l>", "<C-W>l")
 
 keymap("n", "<leader>bd", ":bdelete<cr>", { desc = "Close current buffer" })
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
