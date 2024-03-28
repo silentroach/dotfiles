@@ -24,6 +24,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"onsails/lspkind.nvim",
 			"saadparwaiz1/cmp_luasnip",
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
 		},
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -75,7 +76,15 @@ return {
 			for _, source in ipairs(opts.sources) do
 				source.group_index = source.group_index or 1
 			end
-			require("cmp").setup(opts)
+
+			cmp = require("cmp")
+			cmp.setup(opts)
+
+			cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
+				sources = cmp.config.sources({
+					{ name = "vim-dadbod-completion" },
+				}),
+			})
 		end,
 	},
 }
