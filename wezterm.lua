@@ -25,7 +25,6 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-
 config.window_frame = {
 	font = wezterm.font({
 		family = "Lucida Grande",
