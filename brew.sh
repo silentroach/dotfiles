@@ -3,6 +3,8 @@
 # replacing outdated macos bundled tools with newer versions
 brew install bash coreutils grep git curl wget
 
+# fish_add_path /opt/homebrew/opt/curl/bin
+
 # neovim and dependencies
 brew install neovim ripgrep fd
 
@@ -10,13 +12,13 @@ brew install neovim ripgrep fd
 brew install n
 
 # shell
-brew install fish fzf starship
+brew install fish fzf starship tmux
 
 # useful tools
 brew install httpie colordiff htop stow
 
-# colima
-brew install colima
+# colima + docker
+brew install colima docker docker-compose
 
 # terminal font (moved to MonoLisa)
 # brew install font-fira-code-nerd-font --cask
