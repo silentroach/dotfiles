@@ -19,3 +19,6 @@ defaults write com.apple.dock "tilesize" -int "42"
 
 # Do not show recent apps in dock
 defaults write com.apple.dock show-recents -bool FALSE
+
+# Columns view by default
+defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv
