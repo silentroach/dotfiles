@@ -14,11 +14,13 @@ return {
 				indent = { enable = true },
 				highlight = { enable = true },
 				ensure_installed = {
+					"lua",
 					"markdown",
 					"markdown_inline",
 					"regex",
 					"json",
 					"json5",
+					"dockerfile",
 				},
 			})
 		end,

@@ -1,3 +1,4 @@
+-- highlight current word
 return {
 	"RRethy/vim-illuminate",
 	event = "BufReadPost",

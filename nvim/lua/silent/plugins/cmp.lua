@@ -24,7 +24,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"onsails/lspkind.nvim",
 			"saadparwaiz1/cmp_luasnip",
-			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+			"f3fora/cmp-spell"
 		},
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -35,7 +35,7 @@ return {
 
 			return {
 				completion = {
-					keyword_length = 1, -- do not show autocomplete for nothing
+					keyword_length = 1, -- do not show autouomplete for nothing
 					completeopt = "menu,menuone,noinsert",
 				},
 				snippet = {
@@ -48,20 +48,34 @@ return {
 					["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
+					{
+						name = "spell",
+						keyword_length = 3,
+						max_item_count = 3,
+						option = {
+							keep_all_entries = false,
+							enable_in_context = function()
+								return true
+							end,
+						},
+					},
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "path" },
+					{ name = "path", keyword_length = 3, max_item_count = 5 },
 				}, {
 					{ name = "buffer" },
 				}),
 				formatting = {
 					format = lspkind.cmp_format({
-						maxwidth = 50,
-						ellipsis_char = "...",
+						mode = "symbol",
+						maxwidth = 30,
+						ellipsis_char = "…",
+						show_labelDetails = true,
 					}),
 				},
 				experimental = {
@@ -77,14 +91,8 @@ return {
 				source.group_index = source.group_index or 1
 			end
 
-			cmp = require("cmp")
+			local cmp = require("cmp")
 			cmp.setup(opts)
-
-			cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
-				sources = cmp.config.sources({
-					{ name = "vim-dadbod-completion" },
-				}),
-			})
 		end,
 	},
 }

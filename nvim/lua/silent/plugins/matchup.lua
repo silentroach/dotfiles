@@ -1,3 +1,4 @@
+-- highlight match braces
 return {
 	"andymass/vim-matchup",
 	lazy = false,

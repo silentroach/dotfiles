@@ -1,4 +1,4 @@
-require("silent.set")
+require("silent.options")
 require("silent.spell")
 require("silent.keymaps")
 require("silent.autocmd")

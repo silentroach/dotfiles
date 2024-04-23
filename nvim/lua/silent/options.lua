@@ -21,9 +21,9 @@ vim.opt.signcolumn = "yes" -- gutter space is always reserved
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
@@ -43,3 +43,9 @@ vim.opt.smartcase = true
 vim.opt.scrolloff = 6
 
 vim.opt.cursorline = true
+
+-- diagnostic symbols in signcolumn (same as in trouble.lua)
+vim.fn.sign_define("DiagnosticSignError", { text = "󰅚", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶", texthl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
