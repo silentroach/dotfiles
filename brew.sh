@@ -12,7 +12,7 @@ brew install neovim ripgrep fd
 brew install n
 
 # shell
-brew install fish fzf starship tmux
+brew install fish fzf starship tmux eza
 
 # useful tools
 brew install httpie colordiff htop stow

@@ -21,4 +21,4 @@ defaults write com.apple.dock "tilesize" -int "42"
 defaults write com.apple.dock show-recents -bool FALSE
 
 # Columns view by default
-defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv
+defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
