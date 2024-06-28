@@ -35,6 +35,32 @@ return {
 		local lspconfig = require("lspconfig")
 		lspconfig.tsserver.setup({
 			capabilities = capabilities,
+			settings = {
+				typescript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+				javascript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+			},
 		})
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
@@ -47,5 +73,10 @@ return {
 		-- using telescope for references
 		-- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+		-- inlay hints
+		vim.keymap.set("n", "<leader>H", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end, {})
 	end,
 }
